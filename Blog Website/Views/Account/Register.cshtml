@@ -1,0 +1,33 @@
+﻿@model Blog_Website.Models.View.Register
+
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Register</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    <form method="post">
+        <div class="mb-3">
+            <label for="inputAccountUsername" class="form-label">Username</label>
+            <input type="text" class="form-control" id="inputAccountUsername" asp-for="Username" />
+            <span class="text-danger" asp-validation-for="Username"></span>
+        </div>
+        <div class="mb-3">
+            <label for="inputAccountEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputAccountEmail" asp-for="Email" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="mb-3">
+            <label for="inputAccountPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputAccountPassword" asp-for="Password" />
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark">Register</button>
+        </div>
+    </form>
+</div>

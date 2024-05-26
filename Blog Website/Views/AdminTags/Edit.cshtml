@@ -1,0 +1,38 @@
+﻿@model Blog_Website.Models.View.EditTagRequest
+
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Edit Existing Tag</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    @if (Model != null)
+    {
+        <form method="post">
+            <div class="mb-3">
+                <label for="inputTagId" class="form-label">Id</label>
+                <input type="text" class="form-control" id="inputTagId" asp-for="Id" readonly />
+            </div>
+            <div class="mb-3">
+                <label for="inputTagName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="inputTagName" asp-for="Name" />
+            </div>
+            <div class="mb-3">
+                <label for="inputTagDisplayName" class="form-label">Display Name</label>
+                <input type="text" class="form-control" id="inputTagDisplayName" asp-for="DisplayName" />
+            </div>
+            <div class="mb-3 d-flex">
+                <button type="submit" class="btn btn-dark">Save Tag</button>
+                <button type="submit" class="btn btn-danger ms-2" asp-area="" asp-controller="AdminTags" asp-action="Delete">Delete Tag</button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <p>Tag not found!</p>
+    }
+</div>

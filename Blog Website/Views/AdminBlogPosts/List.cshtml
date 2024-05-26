@@ -1,0 +1,46 @@
+﻿@model List<Blog_Website.Models.Domain.BlogPost>
+
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>List All Blog Posts</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Heading</th>
+                    <th>Tags</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var post in Model)
+                {
+                    <tr>
+                        <td>@post.Id</td>
+                        <td>@post.Heading</td>
+                        <td>
+                            @foreach (var tag in post.Tags)
+                            {
+                                <span class="badge bg-secondary me-1">@tag.DisplayName</span>
+                            }
+                        </td>
+                        <td><a class="btn btn-dark" role="button" asp-area="" asp-controller="AdminBlogPosts" asp-action="Edit" asp-route-id="@post.Id">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>There is no blog post...</p>
+    }
+</div>
