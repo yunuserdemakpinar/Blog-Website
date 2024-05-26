@@ -7,9 +7,9 @@ namespace Blog_Website.Repositories
 {
     public class TagRepository : ITagRepository
     {
-        private readonly BloggieDbContext bloggieDbContext;
+        private readonly BlogDbContext bloggieDbContext;
 
-        public TagRepository(BloggieDbContext bloggieDbContext)
+        public TagRepository(BlogDbContext bloggieDbContext)
         {
             this.bloggieDbContext = bloggieDbContext;
         }

@@ -101,8 +101,9 @@
         inputBlogPostFeaturedImageFile.addEventListener('change', featuredImageUploaded);
 
         async function generateContent() {
+            console.log("test");
             const title = document.getElementById('inputBlogPostPageTitle').value;
-            const response = await fetch('https://localhost:7008/api/Generate/GenerateTitle', {
+            const response = await fetch('/api/Generate/GenerateTitle', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
