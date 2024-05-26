@@ -1,5 +1,7 @@
-### FOR DATABASE M›GRAT›ONS
+### FOR DATABASE M√ùGRAT√ùONS
 
 ## USE 
+```
 update-dabase -context BlogDbContext
 update-dabase -context AuthDbContext
+```
